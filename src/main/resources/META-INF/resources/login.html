@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Masuk ke aplikasi Cashflow untuk mencatat pemasukan, pengeluaran, dan saldo.">
+    <meta name="theme-color" content="#F3F4F6">
+    <title>Login | Cashflow</title>
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: #F3F4F6;
+            color: #111827;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.45;
+        }
+        main { width: 100%; max-width: 420px; }
+        .card {
+            display: block;
+            padding: 1.35rem;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+        h1 { margin: 0; font-size: 2rem; line-height: 1.2; }
+        .subtitle { margin: 0.15rem 0 0.9rem; color: #4B5563; }
+        label { display: block; margin: 0.6rem 0 0.25rem; font-size: 0.875rem; font-weight: 600; }
+        input {
+            width: 100%;
+            padding: 0.55rem 0.7rem;
+            font: inherit;
+            color: #111827;
+            background: #FFFFFF;
+            border: 1px solid #9CA3AF;
+            border-radius: 8px;
+        }
+        input:focus-visible, button:focus-visible, a:focus-visible {
+            outline: 2px solid #2563EB;
+            outline-offset: 2px;
+        }
+        button {
+            width: 100%;
+            margin-top: 0.85rem;
+            padding: 0.6rem 1rem;
+            font: inherit;
+            font-weight: 600;
+            color: #FFFFFF;
+            background: #2563EB;
+            border: 1px solid #2563EB;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover { background: #1D4ED8; border-color: #1D4ED8; }
+        .error {
+            display: none;
+            margin: 0 0 0.6rem;
+            padding: 0.55rem 0.7rem;
+            color: #991B1B;
+            background: #FEE2E2;
+            border: 1px solid #DC2626;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .error:target { display: block; }
+        .register { margin-top: 0.75rem; text-align: right; font-size: 0.9rem; }
+        a { color: #1D4ED8; }
+    </style>
+</head>
+<body>
+<main>
+    <div class="card">
+        <h1>Masuk</h1>
+        <p class="subtitle">Gunakan kredensial akun kamu untuk mengelola cashflow</p>
+        <p class="error" id="login-error">Username atau password salah.</p>
+        <form method="post" action="/login">
+            <label for="login-username">Username</label>
+            <input id="login-username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+            <button id="login-submit" type="submit">Masuk</button>
+        </form>
+        <p class="register"><a href="/register">Belum punya akun? Daftar</a></p>
+    </div>
+</main>
+</body>
+</html>
